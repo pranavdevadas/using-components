@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Profiledata from './profiledata';
 function App() {
+  let data = [
+    {name : 'Pranav', email : 'pranavdevadas2@gmail.com'},
+    {name : 'Aishwarya', email : 'aishwarya22@gmail.com'},
+    {name : 'Alexander', email : 'alexandergm@gmail.com'}
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        data.map((profile) => <Profiledata key={profile.id} {...profile} />)
+      }
+      
     </div>
   );
 }
